@@ -77,14 +77,14 @@ let board, turn, winner, count
 
 
 /*------------------------ Cached Element References ------------------------*/
-const cellEls = document.querySelectorAll('cell')
+const cellEls = document.querySelectorAll('.cell')
 
 const messageEl = document.getElementById('message')
 
 const gameBoard = document.querySelector('.board')
 
 /*----------------------------- Event Listeners -----------------------------*/
-gameBoard.addEventListener('click', handleClick)
+// gameBoard.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -96,7 +96,7 @@ function init() {
   
   turn = 1
   winner = null
-  // render()
+  render()
 }
 
 
@@ -104,10 +104,12 @@ function render(){
   board.forEach((cell, idx) => {
     if(cell === 1){
       cellEls[idx].textContent = 'R'
+      cellEls[idx].style.color = 'purple'
     }
 
     if(cell === -1){
       cellEls[idx].textContent = 'Y'
+      cellEls[idx].style.color = 'green'
     }
 
     if(cell === null){
@@ -125,7 +127,14 @@ function render(){
 }
 
 function handleClick(evt){
-  let cIdex = evt.target.id.replace('c', '')
-  
-  console.log(cIdex)
+  let cIdx = evt.target.id.replace('c', '')
+  if(board[cIdx] != null){
+    return
+  }
+  if(winner != null){
+    return
+  }
+  board[cIdx] = turn
+  winner = isWinner()
+  render()
 }
