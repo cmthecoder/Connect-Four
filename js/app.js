@@ -84,7 +84,7 @@ const messageEl = document.getElementById('message')
 const gameBoard = document.querySelector('.board')
 
 /*----------------------------- Event Listeners -----------------------------*/
-// gameBoard.addEventListener('click', handleClick)
+gameBoard.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -105,12 +105,12 @@ function render(){
   board.forEach((cell, idx) => {
     if(cell === 1){
       cellEls[idx].textContent = 'R'
-      cellEls[idx].style.color = 'purple'
+      cellEls[idx].style.color = 'red'
     }
 
     if(cell === -1){
       cellEls[idx].textContent = 'Y'
-      cellEls[idx].style.color = 'green'
+      cellEls[idx].style.color = 'yellow'
     }
 
     if(cell === null){
@@ -136,7 +136,8 @@ function handleClick(evt){
     return
   }
   board[cIdx] = turn
-  winner = isWinner()
+  turn *= -1
+  isWinner()
   render()
 }
 
