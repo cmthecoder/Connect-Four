@@ -99,35 +99,33 @@ function init() {
   render()
 }
 
-function render()(
-  
-)
 
-// function render(){
-//   board.forEach((cell, idx) => {
-//     if(cell === 1){
-//       cellEls[idx].textContent = 'R'
-//       cellEls[idx].style.color = 'purple'
-//     }
 
-//     if(cell === -1){
-//       cellEls[idx].textContent = 'Y'
-//       cellEls[idx].style.color = 'green'
-//     }
+function render(){
+  board.forEach((cell, idx) => {
+    if(cell === 1){
+      cellEls[idx].textContent = 'R'
+      cellEls[idx].style.color = 'purple'
+    }
 
-//     if(cell === null){
-//       cellEls[idx].textContent = ''
-//     }
+    if(cell === -1){
+      cellEls[idx].textContent = 'Y'
+      cellEls[idx].style.color = 'green'
+    }
 
-//     if(winner === null){
-//       messageEl.textContent = `Player ${turn === 1 ? '1' : '2'}'s turn`
-//     } else if (winner === 'T'){
-//       messageEl.textContent = `It's a tie`
-//     } else {
-//       messageEl.textContent = `Player ${winner} wins`
-//     }
-//   });
-// }
+    if(cell === null){
+      cellEls[idx].textContent = ''
+    }
+
+    if(winner === null){
+      messageEl.textContent = `Player ${turn === 1 ? '1' : '2'}'s turn`
+    } else if (winner === 'T'){
+      messageEl.textContent = `It's a tie`
+    } else {
+      messageEl.textContent = `Player ${winner} wins`
+    }
+  });
+}
 
 function handleClick(evt){
   let cIdx = evt.target.id.replace('c', '')
