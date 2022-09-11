@@ -81,10 +81,10 @@ const cellEls = document.querySelectorAll('.cell')
 
 const messageEl = document.getElementById('message')
 
-const gameBoard = document.querySelector('.board')
+const gameBoard = document.querySelectorAll('.board div')
 
 /*----------------------------- Event Listeners -----------------------------*/
-gameBoard.addEventListener('click', handleClick)
+// gameBoard.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -103,15 +103,6 @@ function init() {
 
 function render(){
   board.forEach((cell, idx) => {
-    if(cell === 1){
-      cellEls[idx].textContent = 'R'
-      cellEls[idx].style.color = 'red'
-    }
-
-    if(cell === -1){
-      cellEls[idx].textContent = 'Y'
-      cellEls[idx].style.color = 'yellow'
-    }
 
     if(cell === null){
       cellEls[idx].textContent = ''
@@ -127,19 +118,45 @@ function render(){
   });
 }
 
-function handleClick(evt){
-  let cIdx = evt.target.id.replace('c', '')
-  if(board[cIdx] != null){
-    return
+
+for(let i = 0; i < gameBoard.length; i++) {
+  gameBoard[i].onclick = () => {
+    if(gameBoard[i + 7].classList.contains('stack')){
+      if(turn === 1){
+        gameBoard[i].classList.add('stack')
+        gameBoard[i].classList.add('player-one')
+      } else if (turn === -1){
+        gameBoard[i].classList.add('stack')
+        gameBoard[i].classList.add('player-two')
+      }
+    }
+    // gameBoard[i] = turn
+    turn *= -1
+    render()
   }
-  if(winner != null){
-    return
-  }
-  board[cIdx] = turn
-  turn *= -1
-  isWinner()
-  render()
 }
+
+// function handleClick(evt){
+//   let cIdx = evt.target.id.replace('c', '')
+  
+  
+
+
+
+
+
+//   if(board[cIdx] != null){
+//     return
+//   }
+//   if(winner != null){
+//     return
+//   }
+
+//   board[cIdx] = turn
+//   turn *= -1
+//   isWinner()
+//   render()
+// }
 
 function isWinner(){
   let total = []
