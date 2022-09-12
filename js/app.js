@@ -81,10 +81,10 @@ const cellEls = document.querySelectorAll('.cell')
 
 const messageEl = document.getElementById('message')
 
-const gameBoard = document.querySelectorAll('.board div')
+const gameBoard = document.querySelector('.board')
 
 /*----------------------------- Event Listeners -----------------------------*/
-// gameBoard.addEventListener('click', handleClick)
+gameBoard.addEventListener('click', handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -103,6 +103,14 @@ function init() {
 
 function render(){
   board.forEach((cell, idx) => {
+    if(cell === 1){
+      cellEls[idx].classList.add('player-one')
+    }
+
+    if(cell === -1){
+      cellEls[idx].classList.add('player-two')
+    }
+
 
     if(cell === null){
       cellEls[idx].textContent = ''
@@ -119,48 +127,49 @@ function render(){
 }
 
 
-for(let i = 0; i < gameBoard.length; i++) {
-  gameBoard[i].onclick = () => {
-    if(gameBoard[i + 7].classList.contains('stack')){
-      if(turn === 1){
-        gameBoard[i].classList.add('stack')
-        gameBoard[i].classList.add('player-one')
-      } else if (turn === -1){
-        gameBoard[i].classList.add('stack')
-        gameBoard[i].classList.add('player-two')
-      }
-    }
-    // gameBoard[i] = turn
-    turn *= -1
-    render()
-  }
-}
-
-// function handleClick(evt){
-//   let cIdx = evt.target.id.replace('c', '')
-  
-  
-
-
-
-
-
-//   if(board[cIdx] != null){
-//     return
+// for(let i = 0; i < gameBoard.length; i++) {
+//   gameBoard[i].onclick = () => {
+//     if(gameBoard[i + 7].classList.contains('stack')){
+//       if(turn === 1){
+//         gameBoard[i].classList.add('stack')
+//         gameBoard[i].classList.add('player-one')
+//       } else if (turn === -1){
+//         gameBoard[i].classList.add('stack')
+//         gameBoard[i].classList.add('player-two')
+//       }
+//     }
+//     // gameBoard[i] = turn
+//     turn *= -1
+//     render()
 //   }
-//   if(winner != null){
-//     return
-//   }
-
-//   board[cIdx] = turn
-//   turn *= -1
-//   isWinner()
-//   render()
 // }
 
-function isWinner(){
-  let total = []
-  winningCombos.forEach(function(combo){
-    const sum = board[combo[0] + board[combo[1]] + board[combo[2]] + board[combo[3]]]
-  })
+function handleClick(evt){
+  let indexSquare = evt.target.id
+  let cIdx = indexSquare.replace('c', '')
+console.log(cIdx)
+
+
+  if(!board[cIdx +7] && cIdx < 35){
+    return
+  }
+
+
+  if(board[cIdx] != null ){
+    return
+  }
+  if(winner != null){
+    return
+  }
+  board[cIdx] = turn
+  turn *= -1
+  // isWinner()
+  render()
 }
+
+// function isWinner(){
+//   let total = []
+//   winningCombos.forEach(function(combo){
+//     const sum = board[combo[0] + board[combo[1]] + board[combo[2]] + board[combo[3]]]
+//   })
+// }
