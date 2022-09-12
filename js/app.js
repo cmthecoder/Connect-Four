@@ -145,14 +145,8 @@ function render(){
 // }
 
 function handleClick(evt){
-  let indexSquare = evt.target.id
-  let cIdx = indexSquare.replace('c', '')
-console.log(cIdx)
+  let cIdx = parseInt(evt.target.id.replace('c', ''))
 
-
-  if(!board[cIdx +7] && cIdx < 35){
-    return
-  }
 
 
   if(board[cIdx] != null ){
@@ -161,15 +155,71 @@ console.log(cIdx)
   if(winner != null){
     return
   }
-  board[cIdx] = turn
+
+
+  const rIdx = stack(cIdx)
+  console.log(rIdx)
+  board[rIdx] = turn
   turn *= -1
-  // isWinner()
+  isWinner()
   render()
 }
+
+
+
+function stack (cIdx){
+    let spot = cIdx + 35
+    if(board[cIdx + 35] !== null){
+      spot = cIdx + 28
+    } 
+    if(board[cIdx + 28] !== null){
+      spot = cIdx + 21
+    }
+    if(board[cIdx + 21] !== null){
+      spot = cIdx + 14
+    }
+    if(board[cIdx + 14] !== null){
+      spot = cIdx +7
+    }
+    if(board[cIdx + 7] !== null){
+      spot = cIdx
+    }
+
+  console.log(cIdx + 35)
+
+  // for(let i = 0; i < board.length; i++){
+  //   if(board){
+
+  //   }
+  // }
+
+
+return spot
+}
+
+
+
 
 // function isWinner(){
 //   let total = []
 //   winningCombos.forEach(function(combo){
 //     const sum = board[combo[0] + board[combo[1]] + board[combo[2]] + board[combo[3]]]
+//     total.push(sum)
 //   })
+
+//   let p1Win = total.some(p1Win => p1Win === 4)
+
+//   let p2Win = total.some(p2Win => p2Win === -4)
+
+//   let isTie = board.some(cells => cells === null)
+
+//   if(p1Win){
+//     winner = "Player 1"
+//   } else if(p2Win){
+//     winner = 'Player 2'
+//   } else {
+//     if(isTie === false){
+//       winner ='T'
+//     }
+//   }
 // }
