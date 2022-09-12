@@ -200,26 +200,33 @@ return spot
 
 
 
-// function isWinner(){
-//   let total = []
-//   winningCombos.forEach(function(combo){
-//     const sum = board[combo[0] + board[combo[1]] + board[combo[2]] + board[combo[3]]]
-//     total.push(sum)
-//   })
+function isWinner(){
+  let total = []
+  winningCombos.forEach(function(combo){
+    console.log('first value', board[combo[0]])
+    console.log('second value', board[combo[1]])
+    console.log('third value', board[combo[2]])
+    console.log('fourth value', board[combo[3]])
 
-//   let p1Win = total.some(p1Win => p1Win === 4)
 
-//   let p2Win = total.some(p2Win => p2Win === -4)
+    const sum = board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]
+    total.push(sum)
+    console.log('sum', sum)
+  })
+console.log(total)
+  let p1Win = total.some(p1Win => p1Win === 4)
 
-//   let isTie = board.some(cells => cells === null)
+  let p2Win = total.some(p2Win => p2Win === -4)
 
-//   if(p1Win){
-//     winner = "Player 1"
-//   } else if(p2Win){
-//     winner = 'Player 2'
-//   } else {
-//     if(isTie === false){
-//       winner ='T'
-//     }
-//   }
-// }
+  let isTie = board.some(cells => cells === null)
+
+  if(p1Win){
+    winner = "Player 1"
+  } else if(p2Win){
+    winner = 'Player 2'
+  } else {
+    if(isTie === false){
+      winner ='T'
+    }
+  }
+}
