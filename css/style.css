@@ -32,9 +32,6 @@ section{
   border: 10px Black solid;
 }
 
-.stack {
-  /* display: none; */
-}
 
 .player-one {
   background-color: red;
