@@ -44,3 +44,13 @@ section{
   background-color: rgb(255, 255, 85);
   border-radius: 50%;
 }
+
+body h1 {
+  border: 2px black solid;
+  margin: 20px;
+}
+
+body h2 {
+  border: 2px black solid;
+  margin-bottom: 20px;
+}
