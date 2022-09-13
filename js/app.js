@@ -88,6 +88,7 @@ const resetBtn = document.getElementById('button')
 /*----------------------------- Event Listeners -----------------------------*/
 gameBoard.addEventListener('click', handleClick)
 
+resetBtn.addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -115,7 +116,7 @@ function render(){
 
 
     if(cell === null){
-      cellEls[idx].textContent = ''
+      cellEls[idx].className = 'cellEls'
     }
 
     if(winner === null){
