@@ -56,5 +56,6 @@ body h2 {
 }
 
 #button {
-  margin-top: 10px;
+  width: 15%;
+  margin: 8px auto;
 }
