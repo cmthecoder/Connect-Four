@@ -223,9 +223,9 @@ console.log(total)
   let isTie = board.some(cells => cells === null)
 
   if(p1Win){
-    winner = "Player 1"
+    winner = "1"
   } else if(p2Win){
-    winner = 'Player 2'
+    winner = '2'
   } else {
     if(isTie === false){
       winner ='T'
