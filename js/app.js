@@ -83,6 +83,8 @@ const messageEl = document.getElementById('message')
 
 const gameBoard = document.querySelector('.board')
 
+const resetBtn = document.getElementById('button')
+
 /*----------------------------- Event Listeners -----------------------------*/
 gameBoard.addEventListener('click', handleClick)
 
