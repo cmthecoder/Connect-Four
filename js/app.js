@@ -129,24 +129,6 @@ function render(){
   });
 }
 
-
-// for(let i = 0; i < gameBoard.length; i++) {
-//   gameBoard[i].onclick = () => {
-//     if(gameBoard[i + 7].classList.contains('stack')){
-//       if(turn === 1){
-//         gameBoard[i].classList.add('stack')
-//         gameBoard[i].classList.add('player-one')
-//       } else if (turn === -1){
-//         gameBoard[i].classList.add('stack')
-//         gameBoard[i].classList.add('player-two')
-//       }
-//     }
-//     // gameBoard[i] = turn
-//     turn *= -1
-//     render()
-//   }
-// }
-
 function handleClick(evt){
   let cIdx = parseInt(evt.target.id.replace('c', ''))
 
@@ -188,15 +170,6 @@ function stack (cIdx){
       spot = cIdx
     }
 
-  console.log(cIdx + 35)
-
-  // for(let i = 0; i < board.length; i++){
-  //   if(board){
-
-  //   }
-  // }
-
-
 return spot
 }
 
@@ -214,7 +187,6 @@ function isWinner(){
 
     const sum = board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]
     total.push(sum)
-    console.log('sum', sum)
   })
 console.log(total)
   let p1Win = total.some(p1Win => p1Win === 4)
