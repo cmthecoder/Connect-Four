@@ -48,11 +48,15 @@ section{
 body h1 {
   border: 2px black solid;
   margin: 20px;
+  width: 50%;
+  margin: 10px auto;
 }
 
 body h2 {
   border: 2px black solid;
   margin-bottom: 20px;
+  width: 25%;
+  margin: auto;
 }
 
 #button {
