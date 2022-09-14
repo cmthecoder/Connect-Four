@@ -24,5 +24,9 @@ Technologies used
 - HTML, CSS, JavaScript, Bootstrap
 
 Next Steps
+- Add a scoreboard to display the win count
+- Add a mode to play against computer
 
 
+Credits
+- Clipart Library
