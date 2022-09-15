@@ -201,6 +201,8 @@ function isWinner(){
   } else {
     if(isTie === false){
       winner ='T'
+      const tie = new Audio("../assets/audio/mixkit-cartoon-failure-piano-473.wav")
+      tie.play()
     }
   }
 }
