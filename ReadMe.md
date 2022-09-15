@@ -26,7 +26,11 @@ Technologies used
 Next Steps
 - Add a scoreboard to display the win count
 - Add a mode to play against computer
+- Add an outline to show where a player has connected four of their pieces
+- Have the winning combination rotate
 
 
 Credits
 - Clipart Library
+- WallpaperAccess
+- mixkit
