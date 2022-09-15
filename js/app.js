@@ -112,6 +112,7 @@ function render(){
 
     if(cell === -1){
       cellEls[idx].classList.add('player-two')
+      
     }
 
 
