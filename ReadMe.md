@@ -16,7 +16,7 @@ Instructions
 - The first person to connect four of their pieces will win the game
 - If no player is able to connect four of their pieces and there are no empty spaces left, the game will be rendered as a tie. Play again!
 
-<img src = "assets/images/connect-four.png">
+<img src = "assets/images/connect-four.png" alt= "Connect Four game with a background of other board games">
 
 
 
