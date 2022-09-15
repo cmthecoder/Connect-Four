@@ -132,18 +132,16 @@ function render(){
 function handleClick(evt){
   let cIdx = parseInt(evt.target.id.replace('c', ''))
 
-
-
   if(board[cIdx] != null ){
     return
   }
+
   if(winner != null){
     return
   }
 
 
   const rIdx = stack(cIdx)
-  console.log(rIdx)
   board[rIdx] = turn
   turn *= -1
   isWinner()
@@ -154,6 +152,7 @@ function handleClick(evt){
 
 function stack (cIdx){
     let spot = cIdx + 35
+
     if(board[cIdx + 35] !== null){
       spot = cIdx + 28
     } 
@@ -179,16 +178,11 @@ return spot
 function isWinner(){
   let total = []
   winningCombos.forEach(function(combo){
-    console.log('first value', board[combo[0]])
-    console.log('second value', board[combo[1]])
-    console.log('third value', board[combo[2]])
-    console.log('fourth value', board[combo[3]])
-
 
     const sum = board[combo[0]] + board[combo[1]] + board[combo[2]] + board[combo[3]]
     total.push(sum)
   })
-console.log(total)
+
   let p1Win = total.some(p1Win => p1Win === 4)
 
   let p2Win = total.some(p2Win => p2Win === -4)
@@ -199,6 +193,7 @@ console.log(total)
     winner = "1"
     const cheer = new Audio("../assets/audio/cheer.wav")
     cheer.play()
+    
   } else if(p2Win){
     winner = '2'
     const cheer = new Audio("../assets/audio/cheer.wav")
