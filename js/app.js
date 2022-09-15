@@ -197,8 +197,12 @@ console.log(total)
 
   if(p1Win){
     winner = "1"
+    const cheer = new Audio("../assets/audio/cheer.wav")
+    cheer.play()
   } else if(p2Win){
     winner = '2'
+    const cheer = new Audio("../assets/audio/cheer.wav")
+    cheer.play()
   } else {
     if(isTie === false){
       winner ='T'
