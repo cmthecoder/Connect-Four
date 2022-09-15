@@ -65,3 +65,7 @@ body h2 {
   width: 15%;
   margin: 8px auto;
 }
+
+div:hover {
+  background-color: rgb(169, 162, 162);
+}
