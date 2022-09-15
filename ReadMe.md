@@ -3,11 +3,11 @@
 
 Connect Four is a game setup with a board containing 7 columns and 6 rows. The objects used in this two-player game are 42 circular pieces. The pieces are differentiated by two solid colors and are divided evenly between the players. The players take turns dropping a single piece from the top of the board to its lowest available space. The first player to connect four of their pieces together wins the game. Players can win by connecting their pieces vertically, horizontally, or diagonally.
 
-Getting started
+### Getting started
 
 https://cmems-connect-four.netlify.app/
 
-Instructions
+### Instructions
 - The first person to choose a spot is player one
 - Each player can only go once
 - Each piece will fall to the lowest available spot
@@ -20,17 +20,17 @@ Instructions
 
 
 
-Technologies used
+### Technologies used
 - HTML, CSS, JavaScript, Bootstrap
 
-Next Steps
+### Next Steps
 - Add a scoreboard to display the win count
 - Add a mode to play against computer
 - Add an outline to show where a player has connected four of their pieces
 - Have the winning combination rotate
 
 
-Credits
+### Credits
 - Clipart Library
 - WallpaperAccess
 - mixkit
