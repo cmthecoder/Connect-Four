@@ -199,6 +199,7 @@ function isWinner(){
     winner = '2'
     const cheer = new Audio("../assets/audio/cheer.wav")
     cheer.play()
+    
   } else {
     if(isTie === false){
       winner ='T'
