@@ -31,6 +31,6 @@ https://cmems-connect-four.netlify.app/
 
 
 ### Credits
-- Clipart Library
-- WallpaperAccess
-- mixkit
+- Clipart Library (Favicon)
+- WallpaperAccess (Background Image)
+- mixkit (Audio)
