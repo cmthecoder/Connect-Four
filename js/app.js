@@ -133,11 +133,11 @@ function render(){
 function handleClick(evt){
   let cIdx = parseInt(evt.target.id.replace('c', ''))
 
-  if(board[cIdx] != null ){
+  if(board[cIdx] !== null ){
     return
   }
 
-  if(winner != null){
+  if(winner !== null){
     return
   }
 
@@ -199,7 +199,7 @@ function isWinner(){
     winner = '2'
     const cheer = new Audio("../assets/audio/cheer.wav")
     cheer.play()
-    
+
   } else {
     if(isTie === false){
       winner ='T'
