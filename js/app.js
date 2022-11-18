@@ -169,8 +169,8 @@ function stack (cIdx){
     if(board[cIdx + 7] !== null){
       spot = cIdx
     }
-
-return spot
+    
+    return spot
 }
 
 
